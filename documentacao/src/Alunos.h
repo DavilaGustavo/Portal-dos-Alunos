@@ -19,12 +19,12 @@ public:
     // Métodos de Acesso
     void setNome(const string& nome);
     void setEmail(const string& email);
-    void setRegistro(int RA);
+    void setRA(int RA);
     void setPeriodo(int periodo);
 
     string getNome () const;
     string getEmail() const;
-    int getRegistro() const;
+    int getRA() const;
     int getPeriodo() const;
 };
 

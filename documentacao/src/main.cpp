@@ -1,11 +1,15 @@
 #include <iostream>
+#include "Alunos.h"
 
 using namespace std;
 
-int main (){
+int main() {
+    Alunos aluno("Gabriel", "gabrielduarte@alunos.utfpr.edu.br", 2382945, 5);
 
-    cout << "Hello World!" << endl;
-    cout << "1 2 3 4 5" << endl;
+    cout << "Nome: " << aluno.getNome() << endl;
+    cout << "Email: " << aluno.getEmail() << endl;
+    cout << "RA: " << aluno.getRA()  << endl;
+    cout << "Periodo: " << aluno.getPeriodo() << endl;
 
     return 0;
 }

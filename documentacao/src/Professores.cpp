@@ -1,8 +1,8 @@
 #include "Professores.h"
 
 // Construtor
-Professores::Professores(const string& nome, const string& email, const string& materia)
-        : nome(nome), email(email), materia(materia){
+Professores::Professores(const string& nome, const string& email)
+        : nome(nome), email(email){
 
         }
 
@@ -16,8 +16,8 @@ void Professores::setEmail(const string& email){
     this->email = email;
 }
 
-void Professores::setMateria(const string& materia){
-    this->materia = materia;
+void Professores::adicionarMaterias(const string& materia){
+    materias.push_back(materia);
 }
 
 string Professores::getNome() const{
@@ -28,6 +28,6 @@ string Professores::getEmail() const{
     return email;
 }
 
-string Professores::getMateria() const{
-    return materia;
+vector<string> Professores::getMaterias() const{
+    return materias;
 }

@@ -2,6 +2,7 @@
 #define PROFESSORES_H
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -9,20 +10,20 @@ class Professores{
 private:
     string nome;
     string email;
-    string materia;
+    vector<string> materias; // vetor para armazenar múltiplas matérias
 
 public:
     // Construtor
-    Professores(const string& nome, const string& email, const string& materia);
+    Professores(const string& nome, const string& email);
 
     // Método de Acesso
     void setNome(const string& nome);
     void setEmail(const string& email);
-    void setMateria(const string& materia);
+    void adicionarMaterias(const string& materia);
 
     string getNome() const;
     string getEmail() const;
-    string getMateria() const;
+    vector<string> getMaterias() const;
 };
 
 #endif

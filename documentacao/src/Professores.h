@@ -13,7 +13,7 @@ private:
 
 public:
     // Construtor
-    Professores(const string& nome, const string& email, string& materia);
+    Professores(const string& nome, const string& email, const string& materia);
 
     // Método de Acesso
     void setNome(const string& nome);

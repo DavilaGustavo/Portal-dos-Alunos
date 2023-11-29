@@ -6,6 +6,7 @@
 using namespace std;
 
 int main() {
+    // Inicializando as classes aluno/professor com informações a fim de teste
     Alunos aluno("Gabriel Duarte", "gabrielduarte@alunos.utfpr.edu.br", 2382945, 5);
     Alunos aluno1("Gustavo D'avlia", "gustavin123@gmail.com", 112358 , 5);
     Alunos aluno2("Augusto Barth", "augustin123@gmail.com", 112358 , 5);

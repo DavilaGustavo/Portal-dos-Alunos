@@ -23,13 +23,19 @@ public:
     void setNomeMateria(const string& nome);
     void setPeriodo(int periodo);
     void setProfessorResponsavel (const Professores& professor);
-    void adicionarAluno (const Alunos& aluno);
+    
+    // Funções de interações dos alunos
+    void matricularAluno (const Alunos& aluno);
+    void desmatricularAluno (const Alunos& aluno);
 
     // Funções para ler e devolver os valores das variaveis privadas
     string getNomeMateria() const;
     int getPeriodo() const;
     Professores getProfessorResponsavel() const;
     vector<Alunos> getAlunosMatriculados() const;
+
+    // Funções de inicialização
+    static vector<Materias> inicializarMaterias();
 };
 
 

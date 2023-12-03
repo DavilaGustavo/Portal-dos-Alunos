@@ -14,7 +14,7 @@ void Professores::setEmail(const string& email){
 void Professores::adicionarMaterias(const string& materia){
     materias.push_back(materia);
 }
-
+    
 // Funções para ler e devolver os valores das variaveis privadas
 string Professores::getNome() const{
     return nome;

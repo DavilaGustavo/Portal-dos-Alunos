@@ -28,6 +28,9 @@ public:
     string getEmail() const;
     int getRA() const;
     int getPeriodo() const;
+
+    // Método para permitir inserção de informações após a criação do objeto
+    void fazerLogin(const string& nome, const string& email, int RA, int periodo);
 };
 
 #endif

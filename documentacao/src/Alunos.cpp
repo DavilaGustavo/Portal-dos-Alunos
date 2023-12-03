@@ -31,3 +31,12 @@ int Alunos::getRA() const{
 int Alunos::getPeriodo() const{
     return periodo;
 }
+
+// Método para permitir inserção de informações após a criação do objeto
+
+void Alunos::fazerLogin(const string& nome, const string& email, int RA, int periodo){
+    this->nome = nome;
+    this->email = email;
+    this->RA = RA;
+    this->periodo = periodo;
+}

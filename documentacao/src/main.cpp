@@ -9,10 +9,9 @@ using namespace std;
 int main() {
     chamarMenu();
 
-    // Inicializando as classes aluno/professor com informações a fim de teste
-    Alunos aluno("Gabriel Duarte", "gabrielduarte@alunos.utfpr.edu.br", 2382945, 5);
-    Alunos aluno1("Gustavo D'avlia", "gustavin123@gmail.com", 112358, 5);
-    vector<Materias> materiasDisponiveis = Materias::inicializarMaterias();
+    /*Alunos aluno("Gabriel Duarte", "gabrielduarte@alunos.utfpr.edu.br", 2382945, 5);
+    Alunos aluno1("Gustavo D'avlia", "gustavin123@gmail.com", 112358, 5);*/
+    /*vector<Materias> materiasDisponiveis = Materias::inicializarMaterias();
 
     cout << "Materias disponiveis: " << endl;
     for (size_t i = 0; i < materiasDisponiveis.size(); ++i){
@@ -33,10 +32,17 @@ int main() {
         cout << "Escolha invalida." << endl;
     }
 
+    cout << endl;
+    cout << "Alunos Matriculados:" << endl;
+    for (const auto& aluno : materia.getAlunosMatriculados()){
+        cout << aluno.getNome() << endl;
+    }
 
 
 
 
+
+*/
 
 
 

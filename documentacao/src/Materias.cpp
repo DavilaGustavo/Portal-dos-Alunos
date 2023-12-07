@@ -28,28 +28,43 @@ bool Materias::verificarRestricaoPeriodo(int periodoAluno, int periodoMateria) c
     const int limiteSuperior = 2;
 
     // Verifique se o período da matéria está dentro do intervalo permitido
-    if (periodoMateria >= periodoAluno)
-        return (periodoAluno - periodoMateria) >= 0 && (periodoAluno - periodoMateria) <= limiteSuperior;
+    if (periodoMateria > (periodoAluno + 2))
+        return 0;
     else
         return 1;
 }
 
 void Materias::matricularAluno(const Alunos& aluno){
     if (!verificarRestricaoPeriodo(aluno.getPeriodo(), periodo)){
-        cout << "Restricao de periodo!" << endl;
+        cout << endl << "Restricao de periodo!" << endl;
     } else if (alunosMatriculados.size() == maxAlunos){
-        cout << "Maximo de alunos permitidos!" << endl;
+        cout << endl << "Maximo de alunos permitidos!" << endl;
+    } else if (verificarAlunoMatriculado(aluno)) {
+        cout << endl << "Aluno ja esta matriculado nesta materia!" << endl;
     } else {
         alunosMatriculados.push_back(aluno);
-        cout << "Aluno matriculado!" << endl;
+        cout << endl << "Aluno matriculado!" << endl;
     }
 }
 
+bool Materias::verificarAlunoMatriculado(const Alunos& aluno) const {
+    return find_if(alunosMatriculados.begin(), alunosMatriculados.end(),
+                   [aluno](const Alunos& a) {
+                       return a.getRA() == aluno.getRA();
+                   }) != alunosMatriculados.end();
+}
+
 void Materias::desmatricularAluno(const Alunos& aluno){
+    if (!verificarAlunoMatriculado(aluno)) {
+        cout << "O aluno nao esta matriculado nessa disciplina!" << endl;
+    }
+    else {
     alunosMatriculados.erase(remove_if(alunosMatriculados.begin(), alunosMatriculados.end(),
                                         [aluno](const Alunos& RA){
                                             return RA.getRA() == aluno.getRA();
                                             }),alunosMatriculados.end());
+        cout << endl << "Aluno desmatriculado!" << endl;
+    }
 }
 
 string Materias::getNomeMateria() const{

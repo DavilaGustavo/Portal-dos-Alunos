@@ -2,6 +2,7 @@
 #include "Alunos.h"
 #include "Materias.h"
 #include <iostream>
+#include <algorithm>
 
 
 
@@ -41,33 +42,80 @@ void menuAluno() {
 
     cout << "Materias disponiveis: " << endl;
     for (size_t i = 0; i < materiasDisponiveis.size(); ++i){
-        cout << i + 1 << ". " << materiasDisponiveis[i].getNomeMateria() << endl;
+        cout << i + 1 << ". " << materiasDisponiveis[i].getNomeMateria() << " (" << materiasDisponiveis[i].getPeriodo() << ")" << endl;
     }
 
     int escolha;
-    cout << "Escolha uma materia: ";
-    cin >> escolha;
+    cout << endl << "Selecao de materias feitas" << endl << "###############" << endl << "Digite 0 para sair" << endl;
+    do {
+        cout << "Escolha uma materia feita: ";
+        cin >> escolha;
 
-    if (escolha >= 1 && escolha <= static_cast<int>(materiasDisponiveis.size())) {
-        // Matriculando o aluno na matéria escolhida
-        materiasDisponiveis[escolha - 1].matricularAluno(aluno);
-
-        /*cout << "Materia: " << materiasDisponiveis[escolha - 1].getNomeMateria() << endl;
-        cout << "Professor Responsavel: " << materiasDisponiveis[escolha - 1].getProfessorResponsavel().getNome() << endl;
-        cout << "Alunos Matriculados:" << endl;*/
-        cout << endl << "Alunos matriculados em " << materiasDisponiveis[escolha - 1].getNomeMateria() << ":" << endl;
-        for (const auto& aluno : materiasDisponiveis[escolha - 1].getAlunosMatriculados()){       
-            cout << aluno.getNome() << endl;
+         if (escolha >= 1 && escolha <= static_cast<int>(materiasDisponiveis.size())) {
+            // Adicionando a matéria à lista de matérias feitas
+            aluno.adicionarMateriaFeita(materiasDisponiveis[escolha - 1].getNomeMateria());
+        } else if (escolha != 0) {
+            cout << "Escolha invalida." << endl;
         }
-    } else {
-        cout << "Escolha invalida." << endl;
+    } while (escolha != 0);
+
+    // Mostrar matérias feitas pelo aluno
+    cout << endl << "Materias feitas pelo aluno:" << endl;
+    vector<string> materiasFeitas = aluno.getMateriasFeitas();
+    for (const auto& materia : materiasFeitas) {
+        cout << materia << endl;
     }
+
+    cout << endl << "Inscricao de materias" << endl << "###############" << endl << "Digite 0 para sair" << endl;
+    do {
+        cout << "Escolha uma materia: ";
+        cin >> escolha;
+
+        if (escolha >= 1 && escolha <= static_cast<int>(materiasDisponiveis.size())) {
+            if (find(materiasFeitas.begin(), materiasFeitas.end(), materiasDisponiveis[escolha - 1].getNomeMateria()) != materiasFeitas.end()) { 
+                cout << "Esta materia ja foi feita. Escolha outra materia." << endl;
+            } else {
+                // Mostra a porcentagem de alunos matriculados após o aluno se inscrever
+                cout << "Porcentagem de alunos matriculados em " << materiasDisponiveis[escolha - 1].getNomeMateria() << ": "
+                    << materiasDisponiveis[escolha - 1].getPorcentagem() << "% (" << materiasDisponiveis[escolha - 1].getAlunosMatriculados().size() << "/" << materiasDisponiveis[escolha - 1].getMax() << ")" <<endl;
+
+                /*cout << "Materia: " << materiasDisponiveis[escolha - 1].getNomeMateria() << endl;
+                cout << "Professor Responsavel: " << materiasDisponiveis[escolha - 1].getProfessorResponsavel().getNome() << endl;
+                cout << "Alunos Matriculados:" << endl;*/
+                cout << endl << "Alunos matriculados em " << materiasDisponiveis[escolha - 1].getNomeMateria() << ":" << endl;
+                for (const auto& aluno : materiasDisponiveis[escolha - 1].getAlunosMatriculados()){       
+                    cout << aluno.getNome() << endl;
+                }
+                cout << endl;
+
+                cout << "Confirmar a inscricao na materia: " << materiasDisponiveis[escolha - 1].getNomeMateria() << "?" << endl;
+                int escolha2;
+                cout << "[1]. Confirmar" << endl << "[0]. Cancelar" << endl;
+                cin >> escolha2;
+                switch (escolha2) {
+                    case 1:
+                        // Matriculando o aluno na matéria escolhida
+                        materiasDisponiveis[escolha - 1].matricularAluno(aluno);
+                        break;
+                    case 0:
+                        cout << "Matricula cancelada!" << endl;
+                        break;
+                    default:
+                        cout << "Opcao invalida. Tente novamente." << endl;
+                }
+            }
+        } else if (escolha == 0){
+            cout << "Saindo da matricula." << endl;
+        } else {
+            cout << "Escolha invalida." << endl;
+        }
+    } while (escolha != 0);
 }
 
-void menuAdmin() {
+/*void menuAdmin() {
     cout << "Menu do Admin!" << endl;
     
-}
+}*/
 
 // Void responsável por continuar o menu com a escolha do usuário
 void menu(int opcao) {
@@ -76,10 +124,10 @@ void menu(int opcao) {
             //cout << "Voce escolheu a Opcao 1." << endl;
             menuAluno();
             break;
-        case 2:
+        /*case 2:
             cout << "Voce escolheu a Opcao 2." << endl;
             menuAdmin();
-            break;
+            break;*/
         case 0:
             cout << "Saindo do programa." << endl;
             break;
@@ -93,7 +141,6 @@ void chamarMenu() {
     int opcao;
     cout << "Escolha como prosseguir:" << endl;
     cout << "[1]. Aluno" << endl;
-    cout << "[2]. Admin" << endl;
     cout << "[0]. Sair" << endl;
 
     cout << "Escolha uma opcao: ";

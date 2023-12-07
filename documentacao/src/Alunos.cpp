@@ -32,6 +32,14 @@ int Alunos::getPeriodo() const{
     return periodo;
 }
 
+void Alunos::adicionarMateriaFeita(const string& materia){
+    materiasFeitas.push_back(materia);
+}
+
+vector<string> Alunos::getMateriasFeitas() const {
+    return materiasFeitas;
+}
+
 // Método para permitir inserção de informações após a criação do objeto
 
 void Alunos::fazerLogin(const string& nome, const string& email, int RA, int periodo){

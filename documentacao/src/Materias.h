@@ -12,13 +12,14 @@ class Materias {
 private: 
     string nomeMateria;
     int periodo;
+    int maxAlunos = 44;
     Professores professorResponsavel;
     vector<Alunos> alunosMatriculados;
     bool verificarRestricaoPeriodo(int periodoAluno, int periodoMateria) const;
 
 public:
     //Construtor
-    Materias(const string& nomeMateria, int periodo, const Professores& professor);
+    Materias(const string& nomeMateria, int periodo, const Professores& professor, const vector<Alunos>& alunos);
 
     // Funções para trocar as variaveis privadas
     void setNomeMateria(const string& nome);
@@ -34,6 +35,8 @@ public:
     int getPeriodo() const;
     Professores getProfessorResponsavel() const;
     vector<Alunos> getAlunosMatriculados() const;
+    int getMax() const;
+    float getPorcentagem() const;
 
     // Funções de inicialização
     static vector<Materias> inicializarMaterias();

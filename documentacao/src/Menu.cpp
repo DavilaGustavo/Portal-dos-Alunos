@@ -9,13 +9,14 @@ using namespace std;
 
 void menuAluno() {
     cout << "Menu do Aluno!" << endl;
-    Alunos aluno("X", "X", 0, 0);
-    
+ 
     string nome, email;
     int RA, periodo;
 
+    Alunos aluno(nome, email, RA, periodo);
+
     cout << endl << "Digite seu nome: ";
-    cin.ignore(); // Limpar o buffer antes de usar o getline, estava ocorrendo erro
+    cin.ignore(); // Limpar o buffer antes de usar o getline
     getline(cin, nome);
 
     cout << "Digite seu email: ";

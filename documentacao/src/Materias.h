@@ -14,6 +14,7 @@ private:
     int periodo;
     Professores professorResponsavel;
     vector<Alunos> alunosMatriculados;
+    bool verificarRestricaoPeriodo(int periodoAluno, int periodoMateria) const;
 
 public:
     //Construtor

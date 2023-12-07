@@ -28,6 +28,7 @@ public:
     
     // Funções de interações dos alunos
     void matricularAluno (const Alunos& aluno);
+    bool verificarAlunoMatriculado(const Alunos& aluno) const;
     void desmatricularAluno (const Alunos& aluno);
 
     // Funções para ler e devolver os valores das variaveis privadas

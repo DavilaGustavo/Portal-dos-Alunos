@@ -158,12 +158,18 @@ vector<Alunos> inicializarAlunosAleatorios(int quantidade) {
     return alunos;
 }
 
+
 // Inicializador de matérias e professores
 vector<Materias> Materias::inicializarMaterias(){
-    int numAlunosAleatorio = rand() % 35 + 10; // Garante que não ultrapasse 44
-    vector<Alunos> alunosAleatorios = inicializarAlunosAleatorios(numAlunosAleatorio);
-
     Professores Alexandre_Giron ("Alexandre Augusto Giron", "alexandregiron@utfpr.edu.br");
+    Professores Marcia_Regina ("Marcia Regina", "marciaregina@utfpr.edu.br");
+    Professores Ronaldo_Rodrigues ("Ronaldo Rodrigues", "ronaldorodrigues@utfpr.edu.br");
+    Professores Marcello_Talarico ("Marcello Talarico", "marcellotalarico@utfpr.edu.br");
+    Professores Daniel_Cavalcanti ("Daniel Cavalcanti", "danielcavalcanti@utfpr.edu.br");
+    Professores Raquel_Ribeiro ("Raquel Ribeiro", "raquelribeiro@utfpr.edu.br");
+    Professores Sergio_Flavio ("Sergio Flavio", "sergioflavio@utfpr.edu.br");
+    Professores Suellen_Ribeiro ("Suellen Ribeiro", "suellenribeiro@utfpr.edu.br");
+    Professores Leonardo_Lima ("Leonardo Lima", "leonardolima@utfpr.edu.br");
     Professores Cassius_Aguiar ("Cassius Rossi de Aguiar", "cassiusaguiar@utfpr.edu.br");
     Professores Mauricio_Zardo ("Mauricio Zardo Oliveira", "mauricioz@utfpr.edu.br");
     Professores Ricardo_Tavares ("Ricardo Tavares", "ricardo103@professores.utfpr.edu.br");
@@ -172,17 +178,41 @@ vector<Materias> Materias::inicializarMaterias(){
     Professores Jocelaine_Cargnelutti ("Jocelaine Cargnelutti", "jocelaine03@professores.utfpr.edu.br");
 
     return {
-        Materias ("Computacao Grafica", 9, Sidgley_Camargo, alunosAleatorios),
-        Materias ("Circuitos Digitais", 5, Mauricio_Zardo, alunosAleatorios),
-        Materias ("Engenharia de Software", 5, Alexandre_Giron, alunosAleatorios),
-        Materias ("Compiladores", 6, Alexandre_Giron, alunosAleatorios),
-        Materias ("Eletronica Analogica A", 5, Cassius_Aguiar, alunosAleatorios),
-        Materias ("Circuitos Eletricos", 4, Cassius_Aguiar, alunosAleatorios),
-        Materias ("Matematica Discreta", 1, Gustavo_Paetzold, alunosAleatorios),
-        Materias ("Logica para Computacao", 2, Gustavo_Paetzold, alunosAleatorios),
-        Materias ("Estrutura de Dados", 3, Ricardo_Tavares, alunosAleatorios), 
-        Materias ("Banco de Dados", 5, Sidgley_Camargo, alunosAleatorios),
-        Materias ("Equacoes Diferenciais Ordinarias", 3, Jocelaine_Cargnelutti, alunosAleatorios)
+        Materias ("Introducao a Engenharia", 1, Cassius_Aguiar, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Calculo 1", 1, Marcia_Regina, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Geometria Analitica", 1, Ronaldo_Rodrigues, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Matematica Discreta", 1, Gustavo_Paetzold, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Fisica 1", 1, Marcello_Talarico, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Fundamentos de Programacao", 1, Daniel_Cavalcanti, inicializarAlunosAleatorios(rand() % 40 + 5)),
+
+        Materias ("Comunicacao Linguistica", 2, Raquel_Ribeiro, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Calculo 2", 2, Sergio_Flavio, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Algebra Linear", 2, Suellen_Ribeiro, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Logica para Computacao", 2, Gustavo_Paetzold, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Fisica 2", 2, Leonardo_Lima, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Estrutura de Dados", 2, Ricardo_Tavares, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        //Materias ("Quimica A", 2, NULL, inicializarAlunosAleatorios(rand() % 40 + 5)),
+
+        Materias ("Pesquisa e Classificacao de Dados", 3, Ricardo_Tavares, inicializarAlunosAleatorios(rand() % 40 + 5)), 
+        Materias ("Equacoes Diferenciais Ordinarias", 3, Jocelaine_Cargnelutti, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Calculo 3", 3, Jocelaine_Cargnelutti, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Mecanica Geral 1", 3, Jocelaine_Cargnelutti, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Probabilidade e Estatistica", 3, Jocelaine_Cargnelutti, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Fisica 3", 3, Jocelaine_Cargnelutti, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Desenho tecnico", 3, Jocelaine_Cargnelutti, inicializarAlunosAleatorios(rand() % 40 + 5)),
+
+        Materias ("Circuitos Eletricos", 4, Cassius_Aguiar, inicializarAlunosAleatorios(rand() % 40 + 5)),
+
+        Materias ("Eletronica Analogica A", 5, Cassius_Aguiar, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Banco de Dados", 5, Sidgley_Camargo, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Circuitos Digitais", 5, Mauricio_Zardo, inicializarAlunosAleatorios(rand() % 40 + 5)),
+        Materias ("Engenharia de Software", 5, Alexandre_Giron, inicializarAlunosAleatorios(rand() % 40 + 5)),
+
+        Materias ("Compiladores", 6, Alexandre_Giron, inicializarAlunosAleatorios(rand() % 40 + 5)),
+
+        Materias ("Computacao Grafica", 9, Sidgley_Camargo, inicializarAlunosAleatorios(rand() % 40 + 5))
+        
+        
     };
 }
 

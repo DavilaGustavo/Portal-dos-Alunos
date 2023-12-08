@@ -3,5 +3,6 @@
 
 int main() {
     chamarMenu();
+    system("pause");
     return 0;
 }

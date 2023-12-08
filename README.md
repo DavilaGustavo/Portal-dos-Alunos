@@ -11,13 +11,9 @@
      |  `-----------------'  |," .;'| |((((     |  ,"
      +-----------------------+  ;;  | |         |,"
         /_)______________(_/  //'   | +---------+
-   ___________________________/___  `,
-  /  oooooooooooooooo  .o.  oooo /,   \,"-----------
- / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,"
-/_==__==========__==_ooo__ooo=_/'   /___________,"
-`-----------------------------'
 
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+> [!IMPORTANT]
+> O projeto não está com todas as funções que planejavamos, a falta de tempo não possibilitou a implementação do resto. O código está em bom estado independente dos cortes.
 
 # Instruções para Executar o Código em Qualquer Máquina:
 
@@ -57,5 +53,5 @@ Para sistemas Windows, use o nome do executável seguido por ".exe" no final.
 O programa exibirá um menu interativo. Siga as opções apresentadas no console para interagir com as funcionalidades.
 Lembre-se de que as instruções podem variar dependendo do sistema operacional e do ambiente de desenvolvimento específicos. Certifique-se de ajustar as instruções conforme necessário para a configuração da sua máquina. Se encontrar algum problema durante a execução, verifique mensagens de erro específicas e ajuste conforme necessário.
 
-Para melhores instruções clique no link abaixo:
+Para melhores instruções clique no link: 
 [C++ para Visual Studio Code](https://code.visualstudio.com/docs/languages/cpp)
